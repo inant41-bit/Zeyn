@@ -9,13 +9,13 @@
 <meta name="theme-color" content="#1b2142">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Zeyn Gelişim Takibi</title>
 <style>
   :root { --night:#1b2142; --bg:#f3f1f8; --card:#ffffff; --text:#1d2140; --muted:#656887; --brand:#5560d8; --brand-ink:#ffffff; --soft:#e9e8f7; --line:#dedcee; --danger:#d93f4c; --ok:#1f8a62;
     --butter:#ffd36b; --peach:#ff9d7a; --mint:#62c9ae; --rose:#f07fa3; --peri:#8a94ff;
     --t-mint:#e1f5ee; --t-peach:#ffeade; --t-peri:#e8e9fd; --t-rose:#fde6ee; --kc:#3f58c0; --bc:#b0561b;
-    --fd:'Fraunces',Georgia,'Times New Roman',serif; --fb:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+    --fd:'Fraunces','Lora',Georgia,'Times New Roman',serif; --fb:'Figtree','Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
   @media (prefers-color-scheme: dark) { :root { --bg:#0e1124; --card:#171b39; --text:#eceefb; --muted:#9fa4c9; --brand:#939bff; --brand-ink:#12153a; --soft:#222750; --line:#2b3162; --danger:#ff7b86; --ok:#59d3a8;
     --t-mint:#16332f; --t-peach:#3a2a2c; --t-peri:#222750; --t-rose:#3a2438; --kc:#a9b8ff; --bc:#ffb48a; } }
   * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -44,6 +44,7 @@
   .ring svg { position:absolute; inset:0; width:100%; height:100%; transform:rotate(-90deg); }
   .ring .av { position:absolute; inset:12px; border-radius:50%; overflow:hidden; background:#2d3573; }
   .ring .av img { width:100%; height:100%; object-fit:cover; display:block; }
+  .hero-main > div:last-child { padding-right:34px; min-width:0; }
   .hero-hi { font-size:13px; opacity:.78; }
   .hero-age { font-family:var(--fd); font-size:36px; font-weight:600; line-height:1.05; margin:3px 0 5px; letter-spacing:-.01em; }
   .hero-sub { font-size:13.5px; opacity:.9; line-height:1.4; }
@@ -92,6 +93,7 @@
   .nav { position:fixed; left:10px; right:10px; bottom:calc(8px + env(safe-area-inset-bottom,0px)); max-width:640px; margin:0 auto; display:flex; padding:5px; z-index:15; border-radius:26px; border:1px solid var(--line);
     background:color-mix(in srgb, var(--card) 90%, transparent); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); box-shadow:0 10px 28px rgba(20,24,60,.14); }
   .tab { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 0 6px; border:0; background:none; border-radius:20px; font-size:10.5px; color:var(--muted); transition:background .2s, color .2s; }
+  html[lang=ru] .tab { font-size:10px; letter-spacing:-.1px; }
   .tab.active { background:var(--soft); color:var(--brand); font-weight:700; }
   .page { display:none; padding:8px 14px 18px; max-width:640px; margin:0 auto; }
   .page.active { display:block; animation:fadein .2s ease; }
@@ -454,12 +456,12 @@
 </main>
 
 <nav class="nav" aria-label="Bölümler">
-  <button class="tab active" data-page="bugun"><svg class="ico" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></svg>Bugün</button>
-  <button class="tab" data-page="olcum"><svg class="ico" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15l3.5-4.5 3 3L20 7"/></svg>Büyüme</button>
-  <button class="tab" data-page="asi"><svg class="ico" viewBox="0 0 24 24"><path d="M18 3l3 3M15.5 5.5l3 3M8 14l7-7 3 3-7 7zM8 14l-3.5 3.5M3 21l3-3"/></svg>Aşılar</button>
-  <button class="tab" data-page="kilometre"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6.5-8-6.5 0 4 2.5 6.5 8 6.5z"/><path d="M12 15c0-3 2.2-5 6-5 0 3-2.2 5-6 5z"/></svg>Gelişim</button>
-  <button class="tab" data-page="disler"><svg class="ico" viewBox="0 0 24 24"><path d="M8 3.5c-2.8 0-4 2-4 4.3 0 2 1.2 3 1.6 5C6 15 6.2 20.5 8 20.5c1.6 0 1.4-4.6 4-4.6s2.4 4.6 4 4.6c1.8 0 2-5.5 2.4-7.7.4-2 1.6-3 1.6-5 0-2.3-1.2-4.3-4-4.3-1.6 0-2.4.8-4 .8S9.6 3.5 8 3.5z"/></svg>Dişler</button>
-  <button class="tab" data-page="anilar"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h12a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h12M9 8h6"/></svg>Anılar</button>
+  <button class="tab active" data-page="bugun" data-ru="Сегодня"><svg class="ico" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></svg>Bugün</button>
+  <button class="tab" data-page="olcum" data-ru="Рост"><svg class="ico" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15l3.5-4.5 3 3L20 7"/></svg>Büyüme</button>
+  <button class="tab" data-page="asi" data-ru="Прививки"><svg class="ico" viewBox="0 0 24 24"><path d="M18 3l3 3M15.5 5.5l3 3M8 14l7-7 3 3-7 7zM8 14l-3.5 3.5M3 21l3-3"/></svg>Aşılar</button>
+  <button class="tab" data-page="kilometre" data-ru="Развитие"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6.5-8-6.5 0 4 2.5 6.5 8 6.5z"/><path d="M12 15c0-3 2.2-5 6-5 0 3-2.2 5-6 5z"/></svg>Gelişim</button>
+  <button class="tab" data-page="disler" data-ru="Зубы"><svg class="ico" viewBox="0 0 24 24"><path d="M8 3.5c-2.8 0-4 2-4 4.3 0 2 1.2 3 1.6 5C6 15 6.2 20.5 8 20.5c1.6 0 1.4-4.6 4-4.6s2.4 4.6 4 4.6c1.8 0 2-5.5 2.4-7.7.4-2 1.6-3 1.6-5 0-2.3-1.2-4.3-4-4.3-1.6 0-2.4.8-4 .8S9.6 3.5 8 3.5z"/></svg>Dişler</button>
+  <button class="tab" data-page="anilar" data-ru="Альбом"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h12a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h12M9 8h6"/></svg>Anılar</button>
 </nav>
 
 <button class="fab" id="fabBtn" style="display:none"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span id="fabLbl">Ekle</span></button>
@@ -469,6 +471,74 @@
 </div>
 
 <script>
+const RU = {"Bugün":"Сегодня","Büyüme":"Рост","Aşılar":"Прививки","Gelişim":"Развитие","Dişler":"Зубы","Anılar":"Воспоминания","Bölümler":"Разделы","Bugün sayfasına dön":"Вернуться на главную","Ayarlar":"Настройки","Ekle":"Добавить","Kaydet":"Сохранить","Vazgeç":"Отмена","Kapat":"Закрыть","Değiştir":"Изменить","Kaldır":"Удалить","Artır":"Увеличить","Azalt":"Уменьшить","Evet, sil":"Да, удалить","Emin misin?":"Ты уверен(а)?","Zeyn":"Зейн","Zeyn Tümüç":"Зейн Тюмюч","Türkçe":"Türkçe","🌐 Dil / Язык":"🌐 Dil / Язык","Dil":"Речь","Tarih":"Дата","Not":"Заметка","Başlık":"Заголовок","Fotoğraf":"Фото","Kategori":"Категория","Dün":"Вчера","Geçen hafta":"На прошлой неделе","Yenidoğan":"новорождённым","Günaydın":"Доброе утро","İyi günler":"Добрый день","İyi akşamlar":"Добрый вечер","İyi geceler":"Спокойной ночи","{0} aylık":"{0} мес.","{0} günlük":"{0} дн.","{0} yaş":"{0} г.","{0} ay {1} gün.":"{0} мес. {1} дн.","{0} ay {1} gün":"{0} мес. {1} дн.","{0}. aya {1} gün kaldı":"{1} дн. до {0} мес.","{0}. aya {1} gün var":"{1} дн. до {0} мес.","Bugün tam {0} aylık!":"Сегодня ровно {0} мес.!","{0} gün sonra {1} aylık olacak":"Через {0} дн. исполнится {1} мес.","Doğum tarihini ekle":"Добавить дату рождения","kg":"кг","cm":"см","diş":"зубы","anı":"воспом.","Ölçüm":"Измерение","Aşı":"Прививка","Anı":"Воспоминание","Uyku köşesi":"Уголок сна","Ninni, beyaz gürültü, yağmur ve kalp sesi":"Колыбельная, белый шум, дождь и сердцебиение","{0} aylıkken genelde":"Обычно в {0} мес.","İlk ay genelde":"Обычно в первый месяц","Dokunarak Gelişim kaydına ekle. Her bebek kendi hızında büyür.":"Нажми, чтобы добавить в «Развитие». Каждый малыш растёт в своём темпе.","Sıradaki aşı":"Следующая прививка","Aşı işaretle":"Отметь прививку","Aşı takvimi":"Календарь прививок","Tarihler buna göre hesaplanır.":"Даты рассчитываются от неё.","Hepsi tamam ✓":"Всё сделано ✓","Ulusal takvimdeki tüm dozlar işaretli.":"Все дозы национального календаря отмечены.","Yapıldıysa işaretle":"Отметь, если сделано","Diş zamanı":"Время зубов","{0} / {1} diş çıktı":"Прорезалось зубов: {0} из {1}","{0} / {1} çıktı":"{0} из {1} прорезалось","Şu an çıkma zamanı gelen diş yok.":"Сейчас не время для новых зубов.","Çıkma zamanı için doğum tarihini ekle.":"Добавь дату рождения, чтобы видеть сроки."," ve {0} diş daha":" и ещё {0}","Son ölçüm":"Последнее измерение","Son anı":"Последнее воспоминание","▶ Ayın hikâyesi":"▶ История месяца","Önceki ölçüme göre +{0} kg":"К прошлому измерению +{0} кг","Önceki ölçüme göre {0} kg":"К прошлому измерению {0} кг","İlk ölçümü ekle":"Добавь первое измерение","Kilo ve boy grafiği burada görünür.":"Здесь появится график веса и роста.","İlk anıyı ekle":"Добавь первое воспоминание","Bir fotoğraf ya da kısa bir not yeter.":"Достаточно фото или короткой заметки.","Geçmişten bir an":"Момент из прошлого","{0} ay önce":"{0} мес. назад","{0} hafta önce":"{0} нед. назад","Bugün Zeyn {0} aylık oldu!":"Сегодня Зейну исполнилось {0} мес.!","Anı olarak kaydet":"Сохранить как воспоминание","{0}. ay doğum günü":"День рождения: {0} мес.","Bugün, Zeyn {0} aylıkken":"Сегодня, Зейну {0} мес.","Bugün, Zeyn Yenidoğan":"Сегодня, Зейн новорождённый","{0} gün önce, Zeyn {1} aylıkken":"{0} дн. назад, Зейну было {1} мес.","{0} gün önce, Zeyn Yenidoğan":"{0} дн. назад, Зейн был новорождённым","{0} gün sonra, Zeyn {1} aylıkken":"Через {0} дн., Зейну будет {1} мес.","{0} gün sonra, Zeyn Yenidoğan":"Через {0} дн., Зейн новорождённый","Dün, Zeyn {0} aylıkken":"Вчера, Зейну {0} мес.","Dün, Zeyn Yenidoğan":"Вчера, Зейн новорождённый","{0} aylıkken":"в {0} мес.","{0} {1} aylıkken":"{0} в {1} мес.","{0} gün sonra":"через {0} дн.","{0} gün önce":"{0} дн. назад","{0} ay sonra":"через {0} мес.","{0} yıl sonra":"через {0} г.","{0} yıl önce":"{0} г. назад","bugün":"сегодня","Bugün,":"Сегодня,","Henüz ölçüm yok":"Измерений пока нет","Kilo ve boyu ekleyince büyüme grafiği burada oluşur.":"Добавь вес и рост — здесь появится график роста.","İlk ölçümü ekle ":"Добавь первое измерение","Henüz aşı kaydı yok":"Записей о прививках пока нет","Yapılan ya da planlanan aşıları ekle, sıradaki aşı ana sayfada görünür.":"Добавляй сделанные и запланированные прививки — следующая появится на главной.","Aşı ekle":"Добавить прививку","İlk kilometre taşını ekle":"Добавь первое достижение","İlk gülüş, ilk kelime, ilk adım gibi anları kategoriyle kaydet.":"Сохраняй такие моменты, как первая улыбка, первое слово, первый шаг.","Kayıt ekle":"Добавить запись","Henüz anı yok":"Воспоминаний пока нет","Bir fotoğraf, bir not ya da büyüyünce okuması için Zeyn'e bir mektup ekle.":"Добавь фото, заметку или письмо Зейну, чтобы он прочитал, когда вырастет.","Mektup yaz":"Написать письмо","Kilo ve boy ölçümleri":"Измерения веса и роста","Son ölçüm {0}":"Последнее измерение {0}","Türkiye ulusal aşı takvimi":"Национальный календарь прививок Турции","İlk kez yaptıkları":"Что он сделал впервые","{0} kayıt":"Записей: {0}","Süt dişleri ve çıkma zamanları":"Молочные зубы и сроки прорезывания","Fotoğraflar ve notlar":"Фото и заметки","{0} anı":"Воспоминаний: {0}","Ölçüm ekle":"Добавить измерение","Ek aşı ekle":"Добавить прививку","Anı ekle":"Добавить воспоминание","🔵 Kilo":"🔵 Вес","🟠 Boy":"🟠 Рост","📊 WHO aralığı":"📊 Нормы ВОЗ","Kilo:":"Вес:","Boy:":"Рост:","Kilo":"Вес","Boy":"Рост","{0}. ay":"{0} мес.","son kilo":"последний вес","son boy":"последний рост","toplam değişim":"всего","aylık ortalama":"в среднем за мес.","Grafik için kilo ve boy ölçümü ekle.":"Добавь измерения веса и роста для графика.","Gösterilecek bir seri seç.":"Выбери, что показать.","Açık renkli alanlar, yaklaşık WHO erkek bebek referansıdır ({0}.–{1}. yüzdelik; kesikli çizgi ortalama). Bebeklerin büyüme hızı farklı olabilir; değerlendirme için çocuk doktoruna danış.":"Светлые области — примерные нормы ВОЗ для мальчиков ({0}–{1} перцентиль; пунктир — среднее). Дети растут по-разному; для оценки обратись к педиатру.","Üstteki karşılama alanına dokunup doğum tarihini girersen WHO referans aralığı da görünür.":"Укажи дату рождения в настройках — появятся нормы ВОЗ.","İlk ölçümden beri":"С первого измерения","{0} cm uzadı":"Вырос на {0} см","{0} kg aldı":"Прибавил {0} кг","Yaklaşık bir ceviz boyu":"Примерно с грецкий орех","Yaklaşık bir çay bardağı boyu":"Примерно со стаканчик для чая","Yaklaşık bir kurşun kalem boyu":"Примерно с карандаш","Yaklaşık bir telefon boyu":"Примерно с телефон","Yaklaşık bir muz boyu":"Примерно с банан","Yaklaşık bir okul cetveli boyu":"Примерно со школьную линейку","Yaklaşık bir paket makarna kadar":"Примерно как пачка макарон","Yaklaşık bir şişe süt kadar":"Примерно как бутылка молока","Yaklaşık bir ananas kadar":"Примерно как ананас","Yaklaşık bir ev kedisi kadar":"Примерно как домашняя кошка","Yaklaşık bir karpuz kadar":"Примерно как арбуз","Yaklaşık bir kova su kadar":"Примерно как ведро воды","Kayıtlar":"Записи","{0} ölçüm":"Измерений: {0}","{0} kg":"{0} кг","{0} cm":"{0} см","kg +{0}":"кг +{0}","cm +{0}":"см +{0}","kg {0}":"кг {0}","cm {0}":"см {0}","+{0} kg":"+{0} кг","+{0} cm":"+{0} см","Ulusal aşı takvimi":"Национальный календарь","{0} doz işaret bekliyor.":"Доз ждут отметки: {0}","Zamanı gelen her şey yapıldı ✓":"Всё, что положено по сроку, сделано ✓","Tarihleri görmek için doğum tarihini ekle.":"Добавь дату рождения, чтобы увидеть даты.","Geçmiş aşıların hepsi yapıldı":"Все прошлые прививки сделаны","Hepsi yapıldı olarak işaretle":"Отметить все как сделанные","Takvim":"Календарь","Takvim dışı aşılar":"Прививки вне календаря","Zamanı geldi":"Пора","Yapıldı":"Сделано","Planlı":"Запланировано","Ek aşı ekle ":"Добавить прививку","Rotavirüs, menenjit ya da grip gibi takvim dışı aşılar ve randevular.":"Прививки вне календаря и визиты: ротавирус, менингит, грипп.","Doğumda":"При рождении","doğumda":"при рождении","{0}. doz":"{0}-я доза","Tek doz":"Одна доза","Pekiştirme":"Ревакцинация","Hepatit B":"Гепатит B","Hepatit B (doğumda, tek bileşenli)":"Гепатит B (при рождении, моновакцина)","Altılı karma":"Шестикомпонентная","altılı karma":"шестикомпонентную","Altılı karma (DaBT-İPA-Hib-HepB)":"Шестикомпонентная (АКДС-ИПВ-Hib-ГепB)","Difteri, boğmaca, tetanoz, çocuk felci, Hib ve hepatit B":"Дифтерия, коклюш, столбняк, полиомиелит, Hib и гепатит B","KPA":"Пневмококк","KPA (Pnömokok)":"Пневмококковая (ПКВ)","Zatürre, menenjit, kulak iltihabı":"Пневмония, менингит, отит","BCG":"БЦЖ","BCG (Verem)":"БЦЖ (туберкулёз)","Verem (tüberküloz)":"Туберкулёз","OPA":"ОПВ","OPA (Ağızdan çocuk felci)":"ОПВ (оральная полиомиелитная)","Çocuk felci":"Полиомиелит","KKK":"КПК","Kızamık, kızamıkçık, kabakulak":"Корь, краснуха, паротит","Suçiçeği":"Ветрянка","Hepatit A":"Гепатит A","DaBT-İPA":"АКДС-ИПВ","Difteri, boğmaca, tetanoz, çocuk felci":"Дифтерия, коклюш, столбняк, полиомиелит","Td":"АДС-м","Td (Tetanoz-difteri)":"АДС-м (столбняк-дифтерия)","Tetanoz, difteri":"Столбняк, дифтерия","Karma (DaBT-İPA-Hib)":"Комбинированная (АКДС-ИПВ-Hib)","Rotavirüs":"Ротавирус","Meningokok ACWY":"Менингококк ACWY","Meningokok B":"Менингококк B","Grip":"Грипп","Doktor kontrolü":"Осмотр у врача","Yeni aşı":"Новая прививка","Aşıyı düzenle":"Изменить прививку","Aşıyı kaydet":"Сохранить прививку","Aşıyı sil":"Удалить прививку","Takvim dışı bir aşı ya da randevu ekle. Örneğin rotavirüs, menenjit ya da grip.":"Добавь прививку вне календаря или визит. Например, ротавирус, менингит или грипп.","✅ Yapıldı":"✅ Сделано","🗓️ Planlı":"🗓️ Запланировано","Aşı adı":"Название прививки","örn. Karma (DaBT-İPA-Hib)":"напр. Ротавирус","örn. Ateş için doktorla konuş":"напр. Спросить врача о температуре","1 ay sonra":"Через 1 мес.","2 ay sonra":"Через 2 мес.","{0} ay sonra ":"через {0} мес.","Yapıldığı tarih":"Дата прививки","örn. Akşam hafif ateşi oldu":"напр. Вечером была небольшая температура","Yapıldı ✓":"Сделано ✓","Yapılmadı olarak işaretle":"Отметить как не сделано","Kayıtlarında bulduklarım":"Нашёл в твоих записях","Aşı işaretlendi ✓":"Прививка отмечена ✓","Geçmiş aşılar":"Прошлые прививки","Evet, işaretle":"Да, отметить","Zamanı geçmiş {0} doz, takvimdeki tarihleriyle \"yapıldı\" olarak işaretlenecek. Gerçek tarihleri sonra tek tek düzeltebilirsin.":"Просроченные дозы ({0}) будут отмечены как «сделано» с датами календаря. Настоящие даты можно поправить потом по одной.","{0} doz işaretlendi ✓":"Отмечено доз: {0} ✓","{0} aşıları işaretlendi ✓":"Прививки ({0}) отмечены ✓","Bu takvim T.C. Sağlık Bakanlığı ulusal aşı takvimine göre hazırlandı: {0}'ten beri hepatit B ve beşli karma aşı tek bir":"Календарь составлен по национальному графику Минздрава Турции: с апреля 2025 г. гепатит B и пятикомпонентная вакцина объединены в одну","aşıda birleşti, {0}'dan itibaren {1} yaşta":"вакцину, а с сентября 2026 г. в {1} года делают","ikinci doz suçiçeği":"вторую дозу от ветрянки","de yapılıyor. Anne hepatit B taşıyıcısıysa {0}. ayda ek bir hepatit B dozu yapılır. Tarihler yaklaşıktır; aile hekiminin söylediği ve aşı kartındaki bilgi esastır.":". Если мама — носитель гепатита B, в {0} мес. делают дополнительную дозу. Даты примерные; главное — слова семейного врача и прививочная карта.","Motor":"Моторика","Sosyal":"Общение","Beslenme":"Питание","Uyku":"Сон","Diğer":"Другое","Hepsi":"Все","kayıt":"записей","fotoğraflı":"с фото","kategori":"категорий","Bu kategoride kayıt yok.":"В этой категории записей нет.","Yeni gelişim":"Новое достижение","Gelişimi düzenle":"Изменить достижение","Gelişimi kaydet":"Сохранить достижение","Kaydı sil":"Удалить запись","İlk kez yaptığı bir şeyi kaydet.":"Сохрани то, что он сделал впервые.","Ne yaptı?":"Что он сделал?","örn. İlk gülüş":"напр. Первая улыбка","Hikâyesi":"Как это было","Nasıl oldu, kim yanındaydı?":"Как это было, кто был рядом?","İlk gülüş":"Первая улыбка","Başını tutma":"Держит голову","Yuvarlanma":"Переворачивается","Desteksiz oturma":"Сидит без опоры","Emekleme":"Ползает","İlk kelime":"Первое слово","İlk adım":"Первый шаг","İlk diş":"Первый зуб","Ek gıdaya başlama":"Начало прикорма","Yüzlere ve ışığa bakar":"Смотрит на лица и свет","Yüksek seslere tepki verir":"Реагирует на громкие звуки","Karnı üstünde başını kısa süre kaldırır":"Ненадолго поднимает голову лёжа на животе","İlk sosyal gülümseme":"Первая осознанная улыбка","Gu-gu sesleri çıkarır":"Гулит","Yatarken başını kaldırır":"Поднимает голову лёжа","Sesin geldiği yöne bakar":"Поворачивается на звук","Oyuncağı elleriyle yoklar":"Ощупывает игрушку руками","Başını daha uzun süre tutar":"Дольше держит голову","Sesli güler":"Смеётся вслух","Oyuncağa uzanır":"Тянется к игрушке","Yuvarlanmaya başlar":"Начинает переворачиваться","Elindeki nesneyi ağzına götürür":"Тянет предметы в рот","Sesleri taklit etmeye çalışır":"Пытается повторять звуки","Tanıdık yüzlere güler":"Улыбается знакомым лицам","Desteklenince oturur":"Сидит с поддержкой","Adı söylenince döner":"Оборачивается на имя","Ek gıdaya hazırlanır":"Готов к прикорму","Kısa süre desteksiz oturur":"Недолго сидит без опоры","Nesneyi elden ele geçirir":"Перекладывает предмет из руки в руку","Ba-ba gibi heceler söyler":"Лепечет слоги вроде «ба-ба»","Emeklemeye hazırlanır":"Готовится ползать","Yabancıyı fark eder":"Замечает незнакомых","Küçük şeyleri parmaklarıyla tutar":"Берёт мелкие предметы пальцами","Emekler ya da sürünür":"Ползает","Bay bay yapar":"Машет «пока-пока»","Tutunarak ayağa kalkmaya çalışır":"Пытается встать с опорой","Küçük şeyleri iki parmakla tutar":"Берёт мелочи двумя пальцами","Basit sözleri anlar":"Понимает простые слова","Parmakla işaret eder":"Показывает пальцем","Tutunarak yürür":"Ходит с опорой","Saklanan oyuncağı arar":"Ищет спрятанную игрушку","Anne baba gibi sesler çıkarır":"Говорит что-то вроде «мама», «папа»","İlk kelimesini söyler":"Говорит первое слово","Desteksiz birkaç adım atar":"Делает несколько шагов без опоры","Bardaktan içmeyi dener":"Пробует пить из чашки","☰ Liste":"☰ Список","▦ Izgara":"▦ Сетка","⏳ Zaman çizelgesi":"⏳ Лента","✉️ Mektup yaz":"✉️ Написать письмо","Yeni anı":"Новое воспоминание","Anıyı düzenle":"Изменить воспоминание","Anıyı sil":"Удалить воспоминание","📸 Anı":"📸 Воспоминание","✉️ Zeyn'e mektup":"✉️ Письмо Зейну","Zeyn'e mektup":"Письмо Зейну","Ruh hali":"Настроение","örn. Babasını görünce güldü":"напр. Засмеялся, увидев папу","Anı notu":"Заметка","O günü anlat...":"Расскажи об этом дне...","Bir fotoğraf, bir not ya da sadece bir ruh hali.":"Фото, заметка или просто настроение.","Mektubu düzenle":"Изменить письмо","Mektubu sil":"Удалить письмо","Mektup":"Письмо","Büyüyünce okuması için ona bir şeyler yaz.":"Напиши ему что-нибудь, чтобы он прочитал, когда вырастет.","Büyüyünce okuması için ona yaz...":"Напиши ему, чтобы прочитал, когда вырастет...","örn. Sana ilk mektubum":"напр. Моё первое письмо тебе","Sevgili Zeyn,":"Дорогой Зейн,","Sevgili Zeyn":"Дорогой Зейн","Ayın hikâyesi":"История месяца","Hikâyeyi kapat":"Закрыть историю","Zeyn {0} aylıkken, {1} anı":"Зейну {0} мес., воспоминаний: {1}","Zeyn bu ay, {0} anı":"Зейн в этом месяце, воспоминаний: {0}","Zeyn Yenidoğan, {0} anı":"Зейн новорождённый, воспоминаний: {0}","Fotoğraf ekle":"Добавить фото","Galeriden seç ya da hemen çek":"Выбери из галереи или сними сейчас","Bir başlık, not ya da fotoğraf ekle":"Добавь заголовок, заметку или фото","Üst dişler":"Верхние зубы","Alt dişler":"Нижние зубы","Merkez kesici":"Центральный резец","Yan kesici":"Боковой резец","Köpek dişi":"Клык","{0}. azı dişi":"{0}-й моляр","{0}–{1} ay":"{0}–{1} мес.","{0}–{1}. ay":"{0}–{1} мес.","{0} / {1} diş çıktı ":"Прорезалось зубов: {0} из {1}","/ {0} diş çıktı":"/ {0} зубов прорезалось","%{0}":"{0}%","Dişe ya da etiketine dokunup çıkış tarihini ekle. Soluk dişler henüz çıkmadı; turuncu halkalıların çıkma zamanı geldi. Aylar yaklaşık aralıklardır, her bebek farklıdır. Sağ/sol, bebeğin kendi tarafıdır.":"Нажми на зуб или подпись, чтобы указать дату. Бледные зубы ещё не прорезались; у обведённых оранжевым подошёл срок. Месяцы примерные, все дети разные. Право/лево — со стороны малыша.","{0} diş":"Зубов: {0}","ilk diş":"первый зуб","son diş":"последний зуб","Sıradaki dişler":"Следующие зубы","{0}–{1}. ay, zamanı geldi":"{0}–{1} мес., пора","{0}–{1}. ay, her bebek farklı":"{0}–{1} мес., все дети разные","{0}–{1}. ay, yaklaşık {2} ay sonra":"{0}–{1} мес., примерно через {2} мес.","🎉 {0} süt dişinin hepsi çıktı!":"🎉 Все {0} молочных зубов прорезались!","Diş yolculuğu":"Путь зубов","{0}–{1}. ay ":"{0}–{1} мес.","Süt dişlerinin genelde çıktığı aylar":"Месяцы, когда обычно прорезаются молочные зубы","Renkli çubuklar o dişin genelde çıktığı ay aralığı, yeşil kısım çıkanlar. Kesikli çizgi Zeyn'in bugünkü yaşı.":"Цветные полосы — обычный срок прорезывания, зелёным — уже прорезавшиеся. Пунктир — нынешний возраст Зейна.","Çıkan dişler":"Прорезавшиеся зубы","Diş çıkarırken":"Когда режутся зубки","😣 Neler olabilir?":"😣 Что может быть?","🧊 Rahatlatmak için":"🧊 Как облегчить","🪥 Diş bakımı":"🪥 Уход за зубами","Salya artar, eline ve oyuncaklara daha çok ısırır.":"Больше слюны, малыш чаще грызёт руки и игрушки.","Huzursuzluk, uykuda bölünme ve diş etinde şişlik görülebilir.":"Возможны капризы, беспокойный сон и припухшие дёсны.","Yüksek ateş, ishal ya da uzun süren keyifsizlik diş çıkarmaya bağlanmamalı; doktora danış.":"Высокую температуру, понос или долгое плохое самочувствие не стоит списывать на зубы — обратись к врачу.","Buzdolabında soğutulmuş (dondurulmamış) diş kaşıyıcı ver.":"Дай прорезыватель, охлаждённый в холодильнике (не замороженный).","Temiz parmağınla diş etine hafifçe masaj yap.":"Мягко помассируй дёсны чистым пальцем.","Salyayı sık sık sil, çenede pişik olmasın.":"Чаще вытирай слюну, чтобы на подбородке не было раздражения.","Kehribar kolye ya da boyna takılan diş kolyesi boğulma riski taşır, kullanma. Uyuşturucu jelleri doktora sormadan sürme.":"Янтарные бусы и ожерелья для зубов опасны — малыш может задохнуться. Обезболивающие гели — только после консультации с врачом.","İlk diş çıkınca günde {0} kez, yumuşak bebek fırçası ve pirinç tanesi kadar florürlü macunla fırçala.":"С первого зуба чисти {0} раза в день мягкой детской щёткой и пастой со фтором размером с рисовое зёрнышко.","Biberonla uyutmamaya çalış; şekerli içecek verme.":"Старайся не укладывать спать с бутылочкой; не давай сладкие напитки.","İlk diş hekimi kontrolü ilk diş çıktığında ya da en geç {0} yaşında.":"Первый визит к стоматологу — с появлением первого зуба или не позже {0} года.","Çıkış tarihi":"Дата прорезывания","örn. Huzursuzdu, diş kaşıyıcı iyi geldi":"напр. Капризничал, прорезыватель помог","Çıktı ✨":"Прорезался ✨","Henüz çıkmadı olarak işaretle":"Отметить как ещё не прорезавшийся","✨ {0} günü çıktı":"✨ Прорезался {0}","✨ {0} günü çıktı ({1} aylıkken)":"✨ Прорезался {0} (в {1} мес.)","✨ {0} günü çıktı (Yenidoğan)":"✨ Прорезался {0} (новорождённым)","Genelde {0}–{1}. aylar arasında çıkar.":"Обычно прорезается в {0}–{1} мес.","Genelde {0}–{1}. aylar arasında çıkar. Zeyn için biraz erken.":"Обычно прорезается в {0}–{1} мес. Для Зейна пока рановато.","Genelde {0}–{1}. aylar arasında çıkar. Çıkma zamanı geldi.":"Обычно прорезается в {0}–{1} мес. Срок подошёл.","Genelde {0}–{1}. aylar arasında çıkar. Her bebek farklıdır; merak edersen doktoruna sorabilirsin.":"Обычно прорезается в {0}–{1} мес. Все дети разные; если волнуешься, спроси врача.","Yeni diş! ✨":"Новый зуб! ✨","Yeni diş! ✨ {0}. diş":"Новый зуб! ✨ Это {0}-й","İlk diş çıktı! 🎉 Anılara eklemeyi unutma":"Первый зуб! 🎉 Не забудь добавить в воспоминания","20 dişin hepsi tamam! 🎉":"Все 20 зубов на месте! 🎉","Bir dişe dokunup çıkış tarihini ekle 🦷":"Нажми на зуб и укажи дату 🦷","Bir ses seç. Zamanı dolunca yavaşça kısılır.":"Выбери звук. Когда время выйдет, он плавно стихнет.","Ninni":"Колыбельная","Beyaz gürültü":"Белый шум","Yağmur":"Дождь","Kalp atışı":"Сердцебиение","{0} dk":"{0} мин","Süresiz":"Без таймера","Kalan süre {0}:{1}":"Осталось {0}:{1}","Süresiz çalıyor":"Играет без таймера","Uyku köşesini kapat":"Закрыть уголок сна","Bu tarayıcı ses çalmayı desteklemiyor":"Этот браузер не умеет воспроизводить звук","Uyu yavrum, uyu tatlım,":"Спи, мой маленький, спи, мой сладкий,","Zeynciğim, benim canım.":"Зейн мой, моя радость.","Ay ışığı sana gelsin,":"Пусть луна к тебе заглянет,","Rüyalarına bal aksın.":"Сны пусть сладкими настанут.","Küçük elin avucumda,":"Твоя ладошка в моей руке,","Kalbim atar senin adına.":"Моё сердце бьётся для тебя.","Uyu yavrum, ninni ninni,":"Спи, мой маленький, баю-бай,","Sabah olsun, güldür beni.":"Утром смехом меня встречай.","Doğum tarihi":"Дата рождения","Eklenmedi":"Не указана","Yedek al":"Сделать копию","Kopyala ya da indir":"Скопировать или скачать","Yedeği yükle":"Восстановить копию","Kayıtların yerine geçer":"Заменит текущие записи","Profil fotoğrafı":"Фото профиля","Profil fotoğrafı güncellendi":"Фото профиля обновлено","Zeyn'in doğum tarihi":"Дата рождения Зейна","Yaş, aylık doğum günleri ve diş zamanları buna göre hesaplanır.":"От неё рассчитываются возраст, ежемесячные дни рождения и сроки зубов.","Kayıtların yalnızca bu telefonun tarayıcısında durur. Metni kopyalayıp not uygulamana ya da e-postana yapıştır.":"Записи хранятся только в браузере этого телефона. Скопируй текст и вставь в заметки или письмо.","Kopyala":"Скопировать","Dosya olarak indir":"Скачать файлом","Yedek kopyalandı":"Копия скопирована","Kopyalanamadı. Metni basılı tutup seçerek kopyala.":"Не удалось скопировать. Выдели текст долгим нажатием и скопируй.","Dosya indirme başlatıldı":"Скачивание началось","Bu görünümde dosya indirilemiyor. Kopyala düğmesini kullan.":"Здесь нельзя скачать файл. Используй кнопку «Скопировать».","Yedek metnini yapıştır ya da dosya seç. Yedekteki kayıtlar şu anki kayıtların yerine geçer.":"Вставь текст копии или выбери файл. Записи из копии заменят текущие.","Yedek metnini buraya yapıştır":"Вставь сюда текст копии","Ya da dosya seç":"Или выбери файл","Yükle":"Восстановить","Bu metin bir Zeyn yedeği gibi görünmüyor":"Это не похоже на копию данных Зейна","Yedek yüklensin mi?":"Восстановить копию?","Yedekteki kayıtlar şu anki kayıtların yerine geçer.":"Записи из копии заменят текущие.","Evet, yükle":"Да, восстановить","Yedek yüklendi":"Копия восстановлена","Kaydedilemedi: hafıza dolmuş olabilir. Eski fotoğraflardan bazılarını sil.":"Не удалось сохранить: возможно, память заполнена. Удали часть старых фото.","Tüm kayıtlar silindi":"Все записи удалены","👨‍👩‍👦 İki telefonda kullan":"👨‍👩‍👦 На двух телефонах","İki telefonda kullan":"На двух телефонах","Anne ve babanın telefonu aynı kayıtları görür. Kayıtlar senin özel GitHub deponda durur, tamir defterindeki gibi.":"Телефоны мамы и папы видят одни и те же записи. Они хранятся в твоём закрытом репозитории GitHub.","Bu telefon kimin?":"Чей это телефон?","👩 Anne":"👩 Мама","👨 Baba":"👨 Папа","Anne":"Мама","Baba":"Папа","GitHub kullanıcı adı":"Имя пользователя GitHub","Özel depo adı":"Название закрытого репозитория","Erişim anahtarı (token)":"Ключ доступа (token)","🔑 Depo ve anahtar nasıl hazırlanır?":"🔑 Как подготовить репозиторий и ключ?","GitHub'da":"Создай на GitHub репозиторий","adında":"— тип","(özel) bir depo oluştur.":"(закрытый).","Ayarlar → Developer settings → Personal access tokens →":"Settings → Developer settings → Personal access tokens →","→ Generate new token.":"→ Generate new token.","Repository access:":"Repository access:","→ zeyn-yedek. Permissions → Contents:":"→ zeyn-yedek. Permissions → Contents:","Tamir defterindeki anahtarı kullanacaksan, o anahtarın depo listesine zeyn-yedek'i ekle.":"Если используешь ключ от «тамир дефтери», добавь в его список репозиторий zeyn-yedek.","Oluşan anahtarı buraya yapıştır. Diğer telefona aşağıdaki kurulum koduyla aktarabilirsin.":"Вставь сюда созданный ключ. На второй телефон его можно передать кодом настройки ниже.","📲 Diğer telefonu kur":"📲 Настроить второй телефон","Kurulum kodunu kopyala":"Скопировать код настройки","Kod depo anahtarını içerir, sadece eşine gönder. Diğer telefonda bu ekranı açıp kodu aşağıya yapıştır.":"Код содержит ключ доступа — отправляй только супругу/супруге. На втором телефоне открой этот экран и вставь код ниже.","ZEYN{0}:... kodunu buraya yapıştır":"Вставь сюда код ZEYN{0}:...","Kodu uygula":"Применить код","Eşitlemeyi başlat":"Включить синхронизацию","Kaydet ve eşitle":"Сохранить и синхронизировать","Eşitlemeyi kapat":"Выключить синхронизацию","Kapalı":"Выключена","Eşitleniyor…":"Синхронизация…","Açık, az önce":"Включена, только что","Açık, henüz eşitlenmedi":"Включена, ещё не синхронизировано","Açık, {0} dk önce":"Включена, {0} мин назад","Açık, {0} saat önce":"Включена, {0} ч назад","Açık, {0} gün önce":"Включена, {0} дн. назад","Eşitleme başladı":"Синхронизация началась","Eşitleme kapatıldı. Kayıtlar bu telefonda duruyor.":"Синхронизация выключена. Записи остались на этом телефоне.","Kullanıcı adı, depo ve anahtarın hepsi gerekli":"Нужны имя пользователя, репозиторий и ключ","Bu telefonun kimin olduğunu seç":"Выбери, чей это телефон","Önce anahtarı gir":"Сначала введи ключ","Kurulum kodu kopyalandı":"Код настройки скопирован","Kodu seçip kopyala":"Выдели и скопируй код","Kod uygulandı. Kimin telefonu olduğunu seçip başlat.":"Код применён. Выбери, чей это телефон, и включи синхронизацию.","Bu bir kurulum kodu gibi görünmüyor":"Это не похоже на код настройки","Erişim anahtarı geçersiz ya da süresi dolmuş":"Ключ доступа недействителен или истёк","Anahtarın bu depoya yazma izni yok":"У ключа нет права записи в этот репозиторий","Depo bulunamadı. Adını ve anahtarın izinlerini kontrol et":"Репозиторий не найден. Проверь название и права ключа","GitHub yanıtı: {0}":"Ответ GitHub: {0}","İnternet bağlantısı yok ya da GitHub'a ulaşılamadı":"Нет интернета или GitHub недоступен","Diğer telefonla aynı anda yazıldı, birazdan tekrar denenecek":"Второй телефон записывал одновременно, скоро попробую ещё раз","Fotoğraf indirilemedi ({0})":"Не удалось загрузить фото ({0})","Lütfen tarih seçin":"Выбери дату","Lütfen tarihi seç":"Выбери дату","Lütfen aşı adını girin":"Введи название прививки","Lütfen başlık girin":"Введи заголовок","Lütfen çıkış tarihini seç":"Выбери дату прорезывания","Bu ölçümü silmek istediğine emin misin?":"Удалить это измерение?","Bu aşı kaydını silmek istediğine emin misin?":"Удалить эту запись о прививке?","Bu kaydı silmek istediğine emin misin?":"Удалить эту запись?","Bu anıyı silmek istediğine emin misin?":"Удалить это воспоминание?","Yeni ölçüm":"Новое измерение","Ölçümü düzenle":"Изменить измерение","Ölçümü kaydet":"Сохранить измерение","Ölçümü sil":"Удалить измерение","Kilo ve boyu gir, önceki ölçümle farkı hemen gör.":"Введи вес и рост — сразу увидишь разницу с прошлым измерением.","örn. Doktor kontrolünde ölçüldü":"напр. Измерили у врача","Önceki: {0} kg":"Раньше: {0} кг","Önceki: {0} cm":"Раньше: {0} см","önceki {0} kg":"было {0} кг","önceki {0} cm":"было {0} см","▲ +{0} kg":"▲ +{0} кг","▲ +{0} cm":"▲ +{0} см","▼ {0} kg":"▼ {0} кг","▼ {0} cm":"▼ {0} см","Öncekiyle aynı ({0} kg)":"Как раньше ({0} кг)","Öncekiyle aynı ({0} cm)":"Как раньше ({0} см)","Yeni kayıt":"Новая запись","Düzenle":"Изменить","Sıradaki":"Следующие","İşaretlenmemiş":"Не отмечено","Korur:":"Защищает от:","ve {0} diş daha":"и ещё {0}","{0}. ay aşıları işaretlendi ✓":"Прививки {0} мес. отмечены ✓","Doğumda aşıları işaretlendi ✓":"Прививки при рождении отмечены ✓","{0} yaş aşıları işaretlendi ✓":"Прививки в {0} г. отмечены ✓","Hepatit B, {0}":"Гепатит B, {0}","Doğumda, {0}":"При рождении, {0}","{0}. ay, {1}":"{0} мес., {1}","{0} yaş, {1}":"{0} г., {1}","Planlı, {0}":"Запланировано, {0}","Üst merkez kesici":"Верхний центральный резец","üst merkez kesici":"верхний центральный резец","Üst sağ merkez kesici":"Верхний правый центральный резец","üst sağ merkez kesici":"верхний правый центральный резец","Üst sol merkez kesici":"Верхний левый центральный резец","üst sol merkez kesici":"верхний левый центральный резец","Üst yan kesici":"Верхний боковой резец","üst yan kesici":"верхний боковой резец","Üst sağ yan kesici":"Верхний правый боковой резец","üst sağ yan kesici":"верхний правый боковой резец","Üst sol yan kesici":"Верхний левый боковой резец","üst sol yan kesici":"верхний левый боковой резец","Üst köpek dişi":"Верхний клык","üst köpek dişi":"верхний клык","Üst sağ köpek dişi":"Верхний правый клык","üst sağ köpek dişi":"верхний правый клык","Üst sol köpek dişi":"Верхний левый клык","üst sol köpek dişi":"верхний левый клык","Üst {0}. azı dişi":"Верхний {0}-й моляр","üst {0}. azı dişi":"верхний {0}-й моляр","Üst sağ {0}. azı dişi":"Верхний правый {0}-й моляр","üst sağ {0}. azı dişi":"верхний правый {0}-й моляр","Üst sol {0}. azı dişi":"Верхний левый {0}-й моляр","üst sol {0}. azı dişi":"верхний левый {0}-й моляр","Alt merkez kesici":"Нижний центральный резец","alt merkez kesici":"нижний центральный резец","Alt sağ merkez kesici":"Нижний правый центральный резец","alt sağ merkez kesici":"нижний правый центральный резец","Alt sol merkez kesici":"Нижний левый центральный резец","alt sol merkez kesici":"нижний левый центральный резец","Alt yan kesici":"Нижний боковой резец","alt yan kesici":"нижний боковой резец","Alt sağ yan kesici":"Нижний правый боковой резец","alt sağ yan kesici":"нижний правый боковой резец","Alt sol yan kesici":"Нижний левый боковой резец","alt sol yan kesici":"нижний левый боковой резец","Alt köpek dişi":"Нижний клык","alt köpek dişi":"нижний клык","Alt sağ köpek dişi":"Нижний правый клык","alt sağ köpek dişi":"нижний правый клык","Alt sol köpek dişi":"Нижний левый клык","alt sol köpek dişi":"нижний левый клык","Alt {0}. azı dişi":"Нижний {0}-й моляр","alt {0}. azı dişi":"нижний {0}-й моляр","Alt sağ {0}. azı dişi":"Нижний правый {0}-й моляр","alt sağ {0}. azı dişi":"нижний правый {0}-й моляр","Alt sol {0}. azı dişi":"Нижний левый {0}-й моляр","alt sol {0}. azı dişi":"нижний левый {0}-й моляр","Sorun var: Erişim anahtarı geçersiz ya da süresi dolmuş":"Проблема: Ключ доступа недействителен или истёк","Eşitleme: Erişim anahtarı geçersiz ya da süresi dolmuş":"Синхронизация: Ключ доступа недействителен или истёк","Sorun var: Anahtarın bu depoya yazma izni yok":"Проблема: У ключа нет права записи в этот репозиторий","Eşitleme: Anahtarın bu depoya yazma izni yok":"Синхронизация: У ключа нет права записи в этот репозиторий","Sorun var: Depo bulunamadı. Adını ve anahtarın izinlerini kontrol et":"Проблема: Репозиторий не найден. Проверь название и права ключа","Eşitleme: Depo bulunamadı. Adını ve anahtarın izinlerini kontrol et":"Синхронизация: Репозиторий не найден. Проверь название и права ключа","Sorun var: GitHub yanıtı: {0}":"Проблема: Ответ GitHub: {0}","Eşitleme: GitHub yanıtı: {0}":"Синхронизация: Ответ GitHub: {0}","Sorun var: İnternet bağlantısı yok ya da GitHub'a ulaşılamadı":"Проблема: Нет интернета или GitHub недоступен","Eşitleme: İnternet bağlantısı yok ya da GitHub'a ulaşılamadı":"Синхронизация: Нет интернета или GitHub недоступен","Sorun var: Diğer telefonla aynı anda yazıldı, birazdan tekrar denenecek":"Проблема: Второй телефон записывал одновременно, скоро попробую ещё раз","Eşitleme: Diğer telefonla aynı anda yazıldı, birazdan tekrar denenecek":"Синхронизация: Второй телефон записывал одновременно, скоро попробую ещё раз","Sorun var: Fotoğraf indirilemedi ({0})":"Проблема: Не удалось загрузить фото ({0})","Eşitleme: Fotoğraf indirilemedi ({0})":"Синхронизация: Не удалось загрузить фото ({0})","Eşitleme: Kapalı":"Синхронизация: Выключена","Eşitleme: Eşitleniyor…":"Синхронизация: Синхронизация…","Eşitleme: Açık, az önce":"Синхронизация: Включена, только что","Eşitleme: Açık, henüz eşitlenmedi":"Синхронизация: Включена, ещё не синхронизировано","Eşitleme: Açık, {0} dk önce":"Синхронизация: Включена, {0} мин назад","Eşitleme: Açık, {0} saat önce":"Синхронизация: Включена, {0} ч назад","Eşitleme: Açık, {0} gün önce":"Синхронизация: Включена, {0} дн. назад","Eşitleme: Sorun var: Erişim anahtarı geçersiz ya da süresi dolmuş":"Синхронизация: Проблема: Ключ доступа недействителен или истёк","Eşitleme: Sorun var: Anahtarın bu depoya yazma izni yok":"Синхронизация: Проблема: У ключа нет права записи в этот репозиторий","Eşitleme: Sorun var: Depo bulunamadı. Adını ve anahtarın izinlerini kontrol et":"Синхронизация: Проблема: Репозиторий не найден. Проверь название и права ключа","Eşitleme: Sorun var: GitHub yanıtı: {0}":"Синхронизация: Проблема: Ответ GitHub: {0}","Eşitleme: Sorun var: İnternet bağlantısı yok ya da GitHub'a ulaşılamadı":"Синхронизация: Проблема: Нет интернета или GitHub недоступен","Eşitleme: Sorun var: Diğer telefonla aynı anda yazıldı, birazdan tekrar denenecek":"Синхронизация: Проблема: Второй телефон записывал одновременно, скоро попробую ещё раз","Eşitleme: Sorun var: Fotoğraf indirilemedi ({0})":"Синхронизация: Проблема: Не удалось загрузить фото ({0})"};
+// ================= DİL (Türkçe / Rusça) =================
+let LANG = 'tr'; try { LANG = localStorage.getItem('zeyn_lang') === 'ru' ? 'ru' : 'tr'; } catch(e) {}
+const LOC = LANG === 'ru' ? 'ru-RU' : 'tr-TR';
+const I18N_RE = (() => {
+  const trL = 'Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık', trS = 'Oca|Şub|Mar|Nis|May|Haz|Tem|Ağu|Eyl|Eki|Kas|Ara';
+  const ruG = 'января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря', ruN = 'январь|февраль|март|апрель|май|июнь|июль|август|сентябрь|октябрь|ноябрь|декабрь';
+  const ruS = 'янв\\.|февр\\.|мар\\.|апр\\.|мая|июн\\.|июл\\.|авг\\.|сент\\.|окт\\.|нояб\\.|дек\\.';
+  const L = 'A-Za-zÇĞİÖŞÜçğıöşüА-Яа-яЁё';
+  return new RegExp([
+    `\\d{1,2} (?:${ruG}) \\d{4} г\\.`, `(?:${ruN}) \\d{4} г\\.`, `\\d{1,2} (?:${ruS})(?![${L}])`,
+    `\\d{1,2} (?:${trL}) \\d{4}`, `(?:${trL}) \\d{4}`, `\\d{1,2} (?:${trS})(?![${L}])`,
+    `(?<![${L}])(?:${trL}|${trS})(?![${L}])`,
+    `\\d+(?:[.,]\\d+)?`
+  ].join('|'), 'g');
+})();
+function i18nKey(s) {
+  const caps = [];
+  const k = s.replace(/\s+/g, ' ').replace(I18N_RE, m => { caps.push(m); return '{' + (caps.length - 1) + '}'; });
+  return [k, caps];
+}
+function _t(s) {
+  if (LANG !== 'ru' || !s || typeof s !== 'string') return s;
+  const m = /^(\s*)([\s\S]*?)(\s*)$/.exec(s);
+  if (!m[2]) return s;
+  const [k, caps] = i18nKey(m[2]);
+  let t = RU[k];
+  if (t === undefined) {
+    if (!/, /.test(m[2])) return s;
+    const parts = m[2].split(', '), out = parts.map(x => _t(x));
+    if (out.every((x, i) => x !== parts[i] || !I18N_LETTER.test(parts[i]))) return m[1] + out.join(', ') + m[3];
+    return s;
+  }
+  return m[1] + t.replace(/\{(\d+)\}/g, (_, i) => caps[+i] !== undefined ? caps[+i] : '') + m[3];
+}
+const I18N_SKIP = {SCRIPT:1, STYLE:1, TEXTAREA:1};
+const I18N_LETTER = /[A-Za-zÇĞİÖŞÜçğıöşü]/;
+function i18nText(n) { const pr = n.parentNode && n.parentNode.dataset && n.parentNode.dataset.ru; if (pr && n.nodeValue.trim()) { if (n.nodeValue !== pr) n.nodeValue = pr; return; } const v = n.nodeValue; if (v && I18N_LETTER.test(v)) { const t = _t(v); if (t !== v) n.nodeValue = t; } }
+function i18nEl(el) { if (!el.getAttribute) return; for (const a of ['placeholder','aria-label','title']) { const v = el.getAttribute(a); if (v) { const t = _t(v); if (t !== v) el.setAttribute(a, t); } } }
+function i18nTree(root) {
+  if (root.nodeType === 3) { if (!I18N_SKIP[root.parentNode && root.parentNode.nodeName]) i18nText(root); return; }
+  if (root.nodeType !== 1) return;
+  i18nEl(root);
+  if (I18N_SKIP[root.nodeName]) return;
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+  let n; while ((n = w.nextNode())) { if (n.nodeType === 3) { if (!I18N_SKIP[n.parentNode.nodeName]) i18nText(n); } else i18nEl(n); }
+}
+function i18nHarvest(root) {
+  const out = new Set(), add = v => { if (!v || !I18N_LETTER.test(v)) return; const k = i18nKey(v.trim())[0]; if (/[A-Za-zÇĞİÖŞÜçğıöşü]/.test(k.replace(/\{\d+\}/g, ''))) out.add(k); };
+  const w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+  let n; while ((n = w.nextNode())) {
+    if (n.nodeType === 3) { if (!I18N_SKIP[n.parentNode.nodeName]) add(n.nodeValue); }
+    else if (!I18N_SKIP[n.nodeName]) ['placeholder','aria-label','title'].forEach(a => add(n.getAttribute(a)));
+  }
+  return [...out];
+}
+function setLang(l) { try { localStorage.setItem('zeyn_lang', l); } catch(e) {} location.reload(); }
+if (LANG === 'ru') {
+  document.documentElement.lang = 'ru';
+  new MutationObserver(ms => { for (const m of ms) {
+    if (m.type === 'characterData') { if (!I18N_SKIP[m.target.parentNode && m.target.parentNode.nodeName]) i18nText(m.target); }
+    else if (m.type === 'attributes') i18nEl(m.target);
+    else m.addedNodes.forEach(i18nTree);
+  } }).observe(document.documentElement, {subtree:true, childList:true, characterData:true, attributes:true, attributeFilter:['placeholder','aria-label','title']});
+  i18nTree(document.body);
+  document.title = _t(document.title);
+}
+
 const STORAGE_KEY = 'zeyn_gelisim_data_v1';
 function todayStr() { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
 const AVATAR = "";
@@ -545,7 +615,7 @@ function updateHero() {
 
 function fmtDate(d) {
   const dt = new Date(d);
-  return dt.toLocaleDateString('tr-TR', {day:'2-digit', month:'long', year:'numeric'});
+  return dt.toLocaleDateString(LOC, {day:'2-digit', month:'long', year:'numeric'});
 }
 
 // ---------- TAB SWITCHING ----------
@@ -627,7 +697,7 @@ const WHO = {
 };
 function ageMonths(t) { return (new Date(t) - new Date(data.dogum)) / 86400000 / 30.4375; }
 function setGrafik(k, v) { data.grafik[k] = v; save(); drawChart(); }
-function shortDate(t) { return new Date(t).toLocaleDateString('tr-TR', {day:'numeric', month:'short'}); }
+function shortDate(t) { return new Date(t).toLocaleDateString(LOC, {day:'numeric', month:'short'}); }
 const COL = {kilo:'#5b7fd1', boy:'#e0823f'}, UNIT = {kilo:'kg', boy:'cm'}, NAME = {kilo:'Kilo', boy:'Boy'};
 function infoFor(k, i) {
   const pts = window._S[k], p = pts[i], prev = i > 0 ? pts[i-1] : null;
@@ -910,7 +980,7 @@ function renderDisler() {
   const done = teeth.filter(t => dis[t.id]).sort((x, y) => new Date(dis[y.id].tarih) - new Date(dis[x.id].tarih));
   window._popId = null;
   document.getElementById('dislerBox').innerHTML = `
-    <div class="dprog"><div class="dprog-top"><span><b>${count}</b> / 20 diş çıktı</span><span>%${count*5}</span></div><div class="dbar"><i style="width:${count*5}%"></i></div></div>
+    <div class="dprog"><div class="dprog-top"><span><b>${count}</b> / 20 diş çıktı</span><span>${LANG === 'ru' ? count*5 + '%' : '%' + count*5}</span></div><div class="dbar"><i style="width:${count*5}%"></i></div></div>
     <div class="chart-wrap" style="padding:8px"><svg viewBox="0 0 ${W} ${H}">${svg}</svg>
       <div class="refnote" style="text-align:center;padding:0 6px 4px">Dişe ya da etiketine dokunup çıkış tarihini ekle. Soluk dişler henüz çıkmadı; turuncu halkalıların çıkma zamanı geldi. Aylar yaklaşık aralıklardır, her bebek farklıdır. Sağ/sol, bebeğin kendi tarafıdır.</div>
     </div>` + disStats() + disNext() + disTimeline() + (done.length ? `<h2 class="sec">Çıkan dişler<small>${done.length} diş</small></h2>` + done.map(t => `
@@ -990,7 +1060,7 @@ function renderAnilar() {
   } else if (g === 'zaman') {
     let last = '';
     list.forEach(item => {
-      const m = new Date(item.tarih).toLocaleDateString('tr-TR', {month:'long', year:'numeric'});
+      const m = new Date(item.tarih).toLocaleDateString(LOC, {month:'long', year:'numeric'});
       if (m !== last) { if (last) html += `</div>`; html += `<div class="tl-month">${m}</div><div class="tl">`; last = m; }
       html += aniCard(item);
     });
@@ -1024,7 +1094,7 @@ const trn = n => String(n).replace('.', ',');
 function dstr(t) { return new Date(t + 'T00:00:00'); }
 function dtBlock(t, cls) {
   const d = dstr(t);
-  return `<div class="dt ${cls||''}"><b>${d.getDate()}</b><span>${d.toLocaleDateString('tr-TR', {month:'short'})}</span></div>`;
+  return `<div class="dt ${cls||''}"><b>${d.getDate()}</b><span>${d.toLocaleDateString(LOC, {month:'short'})}</span></div>`;
 }
 function ageParts() {
   if (!data.dogum) return null;
@@ -1066,12 +1136,12 @@ function go(page) {
 }
 function openSettings() {
   openModal(`<h2>Ayarlar</h2>
+    <div class="set" style="cursor:default"><span>🌐 Dil / Язык</span><span class="seg" style="margin:0;padding:3px"><button type="button" class="chip ${LANG === 'tr' ? 'on' : ''}" style="padding:6px 12px" onclick="setLang('tr')">Türkçe</button><button type="button" class="chip ${LANG === 'ru' ? 'on' : ''}" style="padding:6px 12px" onclick="setLang('ru')">Русский</button></span></div>
     <button class="set" onclick="openSync()"><span>👨‍👩‍👦 İki telefonda kullan</span><b>${syncLabel()}</b></button>
     <label class="set" style="margin-top:9px;cursor:pointer"><span>Profil fotoğrafı</span><b style="display:flex;align-items:center;gap:8px">Değiştir <img src="${avatarSrc()}" alt="" style="width:30px;height:30px;border-radius:50%;object-fit:cover"></b><input type="file" accept="image/*" hidden onchange="pickAvatar(this)"></label>
     <button class="set" onclick="setDogum()"><span>Doğum tarihi</span><b>${data.dogum ? fmtDate(data.dogum) : 'Eklenmedi'}</b></button>
     <button class="set" onclick="openBackup()"><span>Yedek al</span><b>Kopyala ya da indir</b></button>
     <button class="set" onclick="openRestore()"><span>Yedeği yükle</span><b>Kayıtların yerine geçer</b></button>
-    <button class="btn-del" onclick="askDel(syncCfg() && syncCfg().token ? 'Eşitleme açık: kayıtlar diğer telefondan ve bulut yedeğinden de silinir. Geri getirilemez.' : 'Tüm kayıtlar bu cihazdan silinir. Yedeğin yoksa geri getirilemez.', wipeAll)">Tüm kayıtları sil</button>
     <div class="btn-row"><button class="btn btn-cancel" onclick="closeModal()">Kapat</button></div>`);
 }
 function openBackup() {
@@ -1157,7 +1227,7 @@ function renderBugun() {
   let month = '';
   if (ap && ap.m <= 12) {
     const mm = Math.max(1, ap.m), list = TIPIK[mm];
-    const done = t => data.kilometre.some(k => (k.baslik||'').toLowerCase() === t.toLowerCase());
+    const done = t => data.kilometre.some(k => [t.toLowerCase(), _t(t).toLowerCase()].includes((k.baslik||'').toLowerCase()));
     month = `<div class="b-month"><h2 class="sec">${ap.m < 1 ? 'İlk ay' : ap.m + ' aylıkken'} genelde</h2><p>Dokunarak Gelişim kaydına ekle. Her bebek kendi hızında büyür.</p>
       ${list.map(t => `<button class="ms ${done(t) ? 'done' : ''}" onclick="openKilometreForm('', '${t}')"><span class="ck">${done(t) ? '✓' : ''}</span><span>${t}</span>${done(t) ? '' : '<em>Kaydet</em>'}</button>`).join('')}</div>`;
   }
@@ -1165,7 +1235,7 @@ function renderBugun() {
   const today0 = new Date(); today0.setHours(0,0,0,0);
   const nv = nextVaccine();
   let asiCard;
-  if (nv) asiCard = `<button class="mini m" onclick="go('asi')"><h4>${nv.late ? 'Aşı işaretle' : 'Sıradaki aşı'}</h4><div class="v">${nv.title}</div><div class="h">${nv.label}, ${fmtDate(nv.date)}<br>${nv.late ? 'Yapıldıysa işaretle' : relDays(nv.date)}</div></button>`;
+  if (nv) asiCard = `<button class="mini m" onclick="go('asi')"><h4>${nv.late ? 'Aşı işaretle' : 'Sıradaki aşı'}</h4><div class="v">${nv.title}</div><div class="h"><span>${nv.label}</span>, ${fmtDate(nv.date)}<br>${nv.late ? 'Yapıldıysa işaretle' : relDays(nv.date)}</div></button>`;
   else if (!data.dogum) asiCard = `<button class="mini m" onclick="setDogum()"><h4>Aşı takvimi</h4><div class="v">Doğum tarihini ekle</div><div class="h">Tarihler buna göre hesaplanır.</div></button>`;
   else asiCard = `<button class="mini m" onclick="go('asi')"><h4>Aşılar</h4><div class="v">Hepsi tamam ✓</div><div class="h">Ulusal takvimdeki tüm dozlar işaretli.</div></button>`;
   const nowM = ap ? ap.m + ap.days/30.4 : null;
@@ -1174,7 +1244,7 @@ function renderBugun() {
   const gk = Object.keys(groups);
   let disCard;
   if (nowM === null) disCard = `<button class="mini p" onclick="setDogum()"><h4>Dişler</h4><div class="v">${disN} / 20 çıktı</div><div class="h">Çıkma zamanı için doğum tarihini ekle.</div></button>`;
-  else if (gk.length) disCard = `<button class="mini p" onclick="go('disler')"><h4>Diş zamanı</h4><div class="v">${gk.slice(0,2).join(', ')}${gk.length > 2 ? ' ve ' + (gk.length-2) + ' diş daha' : ''}</div><div class="h">${disN} / 20 diş çıktı</div></button>`;
+  else if (gk.length) disCard = `<button class="mini p" onclick="go('disler')"><h4>Diş zamanı</h4><div class="v">${gk.slice(0,2).map(x => '<span>' + x + '</span>').join(', ')}${gk.length > 2 ? '<span> ve ' + (gk.length-2) + ' diş daha</span>' : ''}</div><div class="h">${disN} / 20 diş çıktı</div></button>`;
   else disCard = `<button class="mini p" onclick="go('disler')"><h4>Dişler</h4><div class="v">${disN} / 20 çıktı</div><div class="h">Şu an çıkma zamanı gelen diş yok.</div></button>`;
   // son olcum
   let olc;
@@ -1266,7 +1336,7 @@ function storyMonths() {
   data.foto.forEach(f => { const k = (f.tarih || '').slice(0,7); if (k) (g[k] = g[k] || []).push(f); });
   return Object.keys(g).sort().reverse().map(k => ({k, items: g[k].sort((a,b) => dstr(a.tarih) - dstr(b.tarih))}));
 }
-function monthName(k, short) { const [y, m] = k.split('-'); return new Date(+y, +m-1, 1).toLocaleDateString('tr-TR', short ? {month:'short'} : {month:'long', year:'numeric'}); }
+function monthName(k, short) { const [y, m] = k.split('-'); return new Date(+y, +m-1, 1).toLocaleDateString(LOC, short ? {month:'short'} : {month:'long', year:'numeric'}); }
 function ringsHtml() {
   const mos = storyMonths(); if (!mos.length) return '';
   return `<div class="rings">` + mos.map(mo => {
@@ -1552,7 +1622,7 @@ function openAsiForm(editId) {
     <div class="seg big" id="durRow"><button type="button" class="chip ${dur === 'yapildi' ? 'on' : ''}" data-v="yapildi" onclick="pickDurum('yapildi')">✅ Yapıldı</button><button type="button" class="chip ${dur !== 'yapildi' ? 'on' : ''}" data-v="planlandi" onclick="pickDurum('planlandi')">🗓️ Planlı</button></div>
     <label>Aşı adı</label>
     <input type="text" id="f_ad" value="${item ? item.ad : ''}" placeholder="örn. Karma (DaBT-İPA-Hib)">
-    ${item ? '' : `<div class="chips sug">${ASI_ONERI.map(o => `<button type="button" class="chip" onclick="document.getElementById('f_ad').value='${o}'">${o}</button>`).join('')}</div>`}
+    ${item ? '' : `<div class="chips sug">${ASI_ONERI.map(o => `<button type="button" class="chip" onclick="document.getElementById('f_ad').value=this.textContent">${o}</button>`).join('')}</div>`}
     ${dateField(item ? item.tarih : todayStr(), 'Tarih', true)}
     ${noteField(item ? item.not : '', 'örn. Ateş için doktorla konuş')}
     ${formFoot(`saveAsi('${editId||''}')`, 'Aşıyı kaydet', item ? `deleteAsi('${editId}')` : '', 'Aşıyı sil')}`);
@@ -1564,8 +1634,8 @@ function pickKat(k) {
   document.querySelectorAll('.tiles button').forEach(b => b.classList.toggle('on', b.dataset.k === k));
 }
 function pickOneri(o) {
-  document.getElementById('f_baslik').value = o;
-  document.querySelectorAll('.sug .chip').forEach(c => c.classList.toggle('on', c.textContent === o));
+  document.getElementById('f_baslik').value = _t(o);
+  document.querySelectorAll('.sug .chip').forEach(c => c.classList.toggle('on', c.textContent === _t(o)));
   const guess = /adım|emekle|oturma|yuvarlan|başını|tutma/i.test(o) ? 'Motor' : /kelime|ses/i.test(o) ? 'Dil' : /gülüş|güler/i.test(o) ? 'Sosyal' : /diş|gıda|mama/i.test(o) ? 'Beslenme' : null;
   if (guess) pickKat(guess);
 }
@@ -1575,7 +1645,7 @@ function openKilometreForm(editId, preset) {
   const kat = item ? (item.kat || 'Diğer') : 'Motor';
   openModal(formHead('gelisim', item ? 'Gelişimi düzenle' : 'Yeni gelişim', 'İlk kez yaptığı bir şeyi kaydet.', 'var(--t-peach)', 'var(--bc)') + `
     <label>Ne yaptı?</label>
-    <input type="text" id="f_baslik" value="${item ? item.baslik : (preset || '')}" placeholder="örn. İlk gülüş">
+    <input type="text" id="f_baslik" value="${item ? item.baslik : _t(preset || '')}" placeholder="örn. İlk gülüş">
     ${item ? '' : `<div class="chips sug">${ONERI.map(o => `<button type="button" class="chip" onclick="pickOneri('${o}')">${o}</button>`).join('')}</div>`}
     <label>Kategori</label>
     <input type="hidden" id="f_kat" value="${kat}">
@@ -1596,7 +1666,7 @@ function openAniForm(editId, preset, tur) {
   openModal(formHead('ani', item ? 'Anıyı düzenle' : 'Yeni anı', 'Bir fotoğraf, bir not ya da sadece bir ruh hali.', 'var(--t-rose)', '#c2406c') + `
     <div class="seg big" id="turRow"><button type="button" class="chip" data-t="ani" onclick="pickTur('ani')">📸 Anı</button><button type="button" class="chip" data-t="mektup" onclick="pickTur('mektup')">✉️ Zeyn'e mektup</button></div>
     <label>Başlık</label>
-    <input type="text" id="f_baslik" value="${item ? (item.baslik||'') : (preset || '')}" placeholder="örn. Babasını görünce güldü">
+    <input type="text" id="f_baslik" value="${item ? (item.baslik||'') : _t(preset || '')}" placeholder="örn. Babasını görünce güldü">
     <label>Ruh hali</label>
     <div class="moods" id="moodRow">${MOODS.map(m => `<button type="button" class="${m === window._aniMood ? 'on' : ''}" onclick="pickMood('${m}')">${m}</button>`).join('')}</div>
     ${dateField(item ? item.tarih : todayStr())}
@@ -1622,13 +1692,13 @@ function pickTur(t) {
     I.innerHTML = `<svg class="ico" viewBox="0 0 24 24" style="width:28px;height:28px;color:#a07a2c">${FI.mektup}</svg>`;
     nl.textContent = 'Mektup'; n.rows = 8; n.placeholder = 'Büyüyünce okuması için ona yaz...';
     bl.placeholder = 'örn. Sana ilk mektubum';
-    if (!n.value.trim()) n.value = 'Sevgili Zeyn,\n';
+    if (!n.value.trim()) n.value = _t('Sevgili Zeyn,') + '\n';
   } else {
     T.textContent = editing ? 'Anıyı düzenle' : 'Yeni anı'; S.textContent = 'Bir fotoğraf, bir not ya da sadece bir ruh hali.';
     I.innerHTML = `<svg class="ico" viewBox="0 0 24 24" style="width:28px;height:28px;color:#c2406c">${FI.ani}</svg>`;
     nl.textContent = 'Anı notu'; n.rows = 3; n.placeholder = 'O günü anlat...';
     bl.placeholder = 'örn. Babasını görünce güldü';
-    if (n.value.trim() === 'Sevgili Zeyn,') n.value = '';
+    if (n.value.trim() === _t('Sevgili Zeyn,')) n.value = '';
   }
 }
 // ---- diş ----
@@ -1713,7 +1783,7 @@ function nextVaccine() {
   const t0 = dstr(todayStr());
   const plan = data.asi.filter(a => a.durum !== 'yapildi' && dstr(a.tarih) >= t0).sort((a,b) => dstr(a.tarih) - dstr(b.tarih))[0];
   if (g && g.due) {
-    const names = [...new Set(g.items.filter(v => vStatus(v) !== 'done').map(v => v.kisa))].join(', ');
+    const names = [...new Set(g.items.filter(v => vStatus(v) !== 'done').map(v => v.kisa))].map(n => '<span>' + n + '</span>').join(', ');
     if (!plan || dstr(g.due) <= dstr(plan.tarih)) return {title: names, date: g.due, label: vGroupLabel(g.ay), late: g.status === 'past'};
   }
   if (plan) return {title: plan.ad, date: plan.tarih, label: 'Planlı', late: false};
@@ -1733,7 +1803,7 @@ function renderAsi() {
   const nx = groups.find(x => x.status !== 'done');
   if (nx && nx.due) {
     const pend = nx.items.filter(v => vStatus(v) !== 'done');
-    h += `<div class="vx-next ${nx.status === 'past' ? 'late' : ''}"><div class="vn-t">${nx.status === 'past' ? 'İşaretlenmemiş' : 'Sıradaki'}: ${vGroupLabel(nx.ay)}</div>
+    h += `<div class="vx-next ${nx.status === 'past' ? 'late' : ''}"><div class="vn-t"><span>${nx.status === 'past' ? 'İşaretlenmemiş' : 'Sıradaki'}</span>: <span>${vGroupLabel(nx.ay)}</span></div>
       <div class="vn-d">${fmtDate(nx.due)}<span>${relDays(nx.due)}</span></div>
       <div class="vn-c">${pend.map(v => `<span>${v.kisa} <small>${v.doz}</small></span>`).join('')}</div>
       ${['past','now'].includes(nx.status) ? `<button onclick="markGroup(${nx.ay})">Hepsi yapıldı olarak işaretle</button>` : ''}</div>`;
@@ -1766,7 +1836,7 @@ function openDose(id) {
   const rx = key ? ASI_ESLES[key] : null;
   const used = new Set(Object.values(data.takvim || {}).map(x => x.kaynak).filter(Boolean));
   const cand = rx && !r ? data.asi.filter(a => a.durum === 'yapildi' && rx.test(a.ad) && !used.has(a.id)) : [];
-  openModal(formHead('asi', v.ad, `${v.doz}, ${vGroupLabel(v.ay).toLowerCase()}${due ? ' (' + fmtDate(due) + ')' : ''}. Korur: ${v.kor}.`, 'var(--t-mint)', 'var(--ok)') + `
+  openModal(formHead('asi', v.ad, `<span>${v.doz}</span>, <span>${vGroupLabel(v.ay).toLowerCase()}</span>${due ? ' (' + fmtDate(due) + ')' : ''}. <span>Korur:</span> <span>${v.kor}</span>.`, 'var(--t-mint)', 'var(--ok)') + `
     ${r ? `<div class="okband">✓ ${fmtDate(r.tarih)} günü yapıldı</div>` : ''}
     ${cand.length ? `<label>Kayıtlarında bulduklarım</label><div class="chips">${cand.map(a => `<button type="button" class="chip" onclick="setFDate('${a.tarih}');window._doseSrc='${a.id}'">${a.ad}, ${shortDate(a.tarih)}</button>`).join('')}</div>` : ''}
     ${dateField(def, 'Yapıldığı tarih')}
