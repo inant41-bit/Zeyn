@@ -46,9 +46,12 @@
   .ring svg { position:absolute; inset:0; width:100%; height:100%; transform:rotate(-90deg); }
   .ring .av { position:absolute; inset:12px; border-radius:50%; overflow:hidden; background:#2d3573; }
   .ring .av img { width:100%; height:100%; object-fit:cover; display:block; }
-  .hero-main > div:last-child { padding-right:34px; min-width:0; }
+  .hero-main > div:last-child { padding-right:40px; min-width:0; }
+  @media (max-width:400px) { .ring { width:98px; height:98px; } .ring .av { inset:10px; } .hero-main { gap:13px; } }
+  .hero-name { white-space:nowrap; }
   .hero-hi { font-size:13px; opacity:.78; }
-  .hero-age { font-family:var(--fd); font-size:36px; font-weight:600; line-height:1.05; margin:3px 0 5px; letter-spacing:-.01em; }
+  .hero-name { font-size:16px; font-weight:700; margin-top:3px; letter-spacing:.1px; }
+  .hero-age { font-family:var(--fd); font-size:34px; font-weight:600; line-height:1.05; margin:1px 0 5px; letter-spacing:-.01em; }
   .hero-sub { font-size:13.5px; opacity:.9; line-height:1.4; }
   .hero-btn { margin-top:8px; border:0; border-radius:999px; background:var(--butter); color:#2a2300; font-weight:700; font-size:13.5px; padding:8px 14px; }
   .hero-strip { position:relative; display:grid; grid-template-columns:repeat(4,1fr); margin-top:16px; padding-top:13px; border-top:1px solid rgba(255,255,255,.15); }
@@ -1210,7 +1213,7 @@ function renderBugun() {
     ${syncBtnHtml()}<button class="icon-btn" onclick="openSettings()" aria-label="Ayarlar"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></button>
     <div class="hero-main">
       <div class="ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="5"/><circle id="ringProg" data-c="${C.toFixed(1)}" data-off="${off.toFixed(1)}" cx="60" cy="60" r="52" fill="none" stroke="#ffd36b" stroke-width="5" stroke-linecap="round" stroke-dasharray="${C.toFixed(1)}" style="stroke-dashoffset:${off.toFixed(1)}"/></svg><div class="av"><img src="${avatarSrc()}" alt="Zeyn"></div></div>
-      <div><div class="hero-hi">${greet()}</div><div class="hero-age">${ageBig(ap)}</div><div class="hero-sub">${sub}</div></div>
+      <div><div class="hero-hi">${greet()}</div><div class="hero-name">Zeyn Tümüç</div><div class="hero-age">${ageBig(ap)}</div><div class="hero-sub">${sub}</div></div>
     </div>
     <div class="hero-strip">
       <div class="hs"><b>${lk ? trn(lk.kilo) : '–'}</b><span>kg</span></div>
@@ -1276,11 +1279,11 @@ function renderBugun() {
 function tod() { const h = new Date().getHours(); return h >= 5 && h < 8 ? 'dawn' : h >= 8 && h < 17 ? 'day' : h >= 17 && h < 20 ? 'dusk' : 'night'; }
 function skySvg(T) {
   const star = (x, y, s, d, o) => `<path class="tw" style="animation-delay:${d}s" transform="translate(${x} ${y}) scale(${s})" d="M0-5l1.3 3.7L5 0 1.3 1.3 0 5-1.3 1.3-5 0-1.3-1.3z" fill="#fff" opacity="${o}"/>`;
-  const moon = `<g transform="translate(128 13) scale(.5) translate(-158 -35)"><path d="M152 18a24 24 0 1 0 25 33 19.5 19.5 0 0 1-25-33z" fill="#ffd36b"/></g>`;
+  const moon = `<g transform="translate(186 112) scale(.5) translate(-158 -35)"><path d="M152 18a24 24 0 1 0 25 33 19.5 19.5 0 0 1-25-33z" fill="#ffd36b"/></g>`;
   const cloud = (x, y, s) => `<g class="cloud"><g transform="translate(${x} ${y}) scale(${s})" fill="#fff" opacity=".9"><ellipse cx="0" cy="6" rx="16" ry="7"/><circle cx="-6" cy="2" r="7"/><circle cx="5" cy="0" r="9"/></g></g>`;
   let g = '';
-  if (T === 'night') g = moon + star(176, 116, .7, 0, .7) + star(70, 14, .5, 1.6, .6) + star(160, 66, .45, 2.8, .55) + `<circle cx="96" cy="58" r="1.2" fill="#fff" opacity=".45"/><circle cx="200" cy="40" r="1" fill="#fff" opacity=".4"/>`;
-  else if (T === 'day') g = `<g transform="translate(128 15) scale(.8)"><circle r="11" fill="#ffe08a"/><g stroke="#ffe08a" stroke-width="2.4" stroke-linecap="round">${[0,45,90,135,180,225,270,315].map(a => `<line x1="0" y1="-15" x2="0" y2="-19" transform="rotate(${a})"/>`).join('')}</g></g>` + cloud(190, 124, .75) + cloud(60, 8, .5);
+  if (T === 'night') g = moon + star(128, 12, .6, 0, .7) + star(70, 14, .5, 1.6, .6) + star(160, 66, .45, 2.8, .55) + `<circle cx="96" cy="58" r="1.2" fill="#fff" opacity=".45"/><circle cx="200" cy="40" r="1" fill="#fff" opacity=".4"/>`;
+  else if (T === 'day') g = `<g transform="translate(186 112) scale(.8)"><circle r="11" fill="#ffe08a"/><g stroke="#ffe08a" stroke-width="2.4" stroke-linecap="round">${[0,45,90,135,180,225,270,315].map(a => `<line x1="0" y1="-15" x2="0" y2="-19" transform="rotate(${a})"/>`).join('')}</g></g>` + cloud(128, 12, .55) + cloud(60, 8, .5);
   else if (T === 'dawn') g = `<circle cx="186" cy="128" r="26" fill="#ffd36b" opacity=".85"/><circle cx="186" cy="128" r="40" fill="#ffd36b" opacity=".18"/>` + star(70, 14, .5, 0, .5) + star(120, 30, .45, 1.4, .4);
   else g = `<circle cx="186" cy="122" r="22" fill="#ffb36b" opacity=".9"/><circle cx="186" cy="122" r="36" fill="#ffb36b" opacity=".2"/>` + star(120, 26, .55, 0, .7) + star(70, 14, .45, 1.8, .5);
   return `<svg class="sky" viewBox="0 0 210 130" aria-hidden="true">${g}</svg>`;
